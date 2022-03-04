@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    font-family: 'Smooch Sans', sans-serif;
+}
+
+body {
+    background: #BBD2C5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #292E49, #536976, #BBD2C5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #292E49, #536976, #BBD2C5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+button {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    cursor: pointer;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+    border: 1px solid #BBD2C5;
+    color: white;
+    border-radius: 2px;
+    background-color: #292E49;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    text-align: center;
+}
+
+/*------------------ UPPER CONTAINER STYLES --------------- */
+
+.upper-container {
+    background-color: #BBD2C5;
+    color: #6c757a;
+    padding: 20px;
+}
+
+.upper-container h1 {
+    font-size: 60px;
+}
+
+.upper-container p {
+    font-size: 24px;
+}
+
+/* ------------------- MIDDLE CONTAINER STYLES ---------------- */
+
+.mid-container {
+    padding: 20px;
+    margin: 0 20px;
+    border-bottom: 1px solid #6c757a;
+}
+
+.mid-container button {
+    padding: 10px 20px;
+    margin: 20px 10px;
+    font-size: 18px;
+    font-weight: 500;
+    color: #292E49;
+    border: 1px solid white;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+
+.mid-container button:hover {
+    background-color: #292E49;
+    color: #BBD2C5;
+    border: 1px solid white;
+}
+
+.mid-container p {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* ----------------- BOTTOM CONTAINER STYLES ------------------------ */
+
+.bot-container {
+    padding: 20px 0 60px 0;
+    margin: 0 20px;
+}
+
+.bot-container .container {
+    border: none;
+    box-shadow: none;
+}
+
+.bot-container p:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bot-container p:nth-child(2) {
+    font-size: 40px;
+    text-align: end;
+    font-size: 48px;
+}
+
+.bot-container button {
+    padding: 10px 60px;
+    font-size: 24px;
+    background-color: #536976;
+    color: #BBD2C5;
+    border-radius: 3px;
+    border: 1px solid white;
+    transition: 0.3s;
+}
+
+.bot-container button:hover {
+    background-color: #BBD2C5;
+    color: #536976;
+    border: 1px solid #292E49;
+}
