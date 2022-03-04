@@ -28,7 +28,8 @@ const serviceBtns = document.querySelectorAll('.services')
 
 for (let i = 0; i < serviceBtns.length; i++) {
     serviceBtns[i].addEventListener('click', function() {
-        console.log(serviceBtns[i].textContent);
-
+        midContainer.innerHTML += serviceBtns[i].textContent;
     })
 }
+
+
