@@ -74,12 +74,14 @@ button {
 }
 
 .mid-container .added-service {
-    justify-content: flex-start;
+    justify-content: space-between;
     font-weight: bold;
     font-size: 24px;
+    border-bottom: 1px solid #6c757a3f;
 }
 
 .mid-container .added-service span {
+    cursor: pointer;
     font-weight: 200;
     font-size: 14px;
     margin: auto 0;
