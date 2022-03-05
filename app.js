@@ -28,8 +28,9 @@ const serviceBtns = document.querySelectorAll('.services')
 
 for (let i = 0; i < serviceBtns.length; i++) {
     serviceBtns[i].addEventListener('click', function() {
-        midContainer.innerHTML += serviceBtns[i].textContent;
+        const node = document.createElement('p');
+        const textNode = document.createTextNode(`${serviceBtns[i].textContent}`)
+        node.append(textNode);
+        midContainer.appendChild(node)  
     })
 }
-
-
