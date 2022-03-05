@@ -80,12 +80,19 @@ button {
     border-bottom: 1px solid #6c757a3f;
 }
 
-.mid-container .added-service span {
+.mid-container .remove {
     cursor: pointer;
     font-weight: 200;
     font-size: 14px;
     margin: auto 0;
     padding: 0 10px;
+    transition: 0.3s;
+}
+
+.mid-container .remove:hover {
+    color: #BBD2C5;
+    background-color: #bbd2c542;
+    border-radius: 3px;
 }
 
 /* ----------------- BOTTOM CONTAINER STYLES ------------------------ */
