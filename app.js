@@ -1,6 +1,7 @@
 // --------- CACHING THE DOM ----------------
 
 const midContainer = document.querySelector('.mid-container');
+const innerContainer = document.querySelector('.inner-container');
 
 
 // --------------- GLOBAL VARIABLES --------------
@@ -17,6 +18,7 @@ const servicesArr = [{
 }
 ]
 
+let servicesAdded = false;
 let serviceItems = [];
 
 
@@ -55,6 +57,11 @@ for (let i = 0; i < serviceBtns.length; i++) {
         
         node.append(textNode, spanNode);
         
-        midContainer.appendChild(node)  
+        midContainer.appendChild(node)
+        
+        if (serviceItems.length === 1) {
+            servicesAdded = true;
+            innerContainer.innerHTML += `<p class="total"><span class="payment-method">We accept cash, credit card, or Paypal</span>$0</p>`
+        }
     })
 }

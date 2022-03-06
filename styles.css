@@ -102,7 +102,7 @@ button {
     margin: 0 20px;
 }
 
-.bot-container .container {
+.bot-container .inner-container {
     border: none;
     box-shadow: none;
 }
@@ -114,12 +114,23 @@ button {
 
 .bot-container p:nth-child(2) {
     font-size: 40px;
-    text-align: end;
     font-size: 48px;
+}
+
+.bot-container .total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bot-container .payment-method {
+    font-size: 18px;
+    margin: auto 0;
+    font-weight: 200;
 }
 
 .bot-container button {
     padding: 10px 60px;
+    margin-top: 30px;
     font-size: 24px;
     background-color: #536976;
     color: #BBD2C5;
