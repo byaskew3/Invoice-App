@@ -32,9 +32,9 @@ function services(arr) {
 services(servicesArr)
 
 function updateTotalCost(event) {
-    if (event.textContent === 'Wash Car: $10') {
+    if (event.textContent === `${servicesArr[0].service}: $${servicesArr[0].cost}`) {
         totalCost += servicesArr[0].cost;
-    } else if (event.textContent === 'Mow Lawn: $20') {
+    } else if (event.textContent === `${servicesArr[1].service}: $${servicesArr[1].cost}`) {
         totalCost += servicesArr[1].cost;
     } else {
         totalCost += 30;
@@ -43,7 +43,7 @@ function updateTotalCost(event) {
 
 function checkDuplicate(event) {
     if (serviceItems.includes(`${event}`)) {
-        alert('You have already added this item!')
+        alert('You have already added this service!')
         duplicateItems = true;
     }
 }
@@ -56,7 +56,8 @@ function runApp() {
         serviceBtns[i].addEventListener('click', function() {
             checkDuplicate(serviceBtns[i].textContent)
             if (duplicateItems) {
-                return false;
+                duplicateItems = false;
+                return;
             }
             serviceItems.push(serviceBtns[i].textContent)
             console.log(serviceItems)
