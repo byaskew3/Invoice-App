@@ -33,7 +33,7 @@ function services(arr) {
 
 services(servicesArr)
 
-function updateTotalCost(event) {
+function addingTotalCost(event) {
     if (event.textContent === `${servicesArr[0].service}: $${servicesArr[0].cost}`) {
         totalCost += servicesArr[0].cost;
     } else if (event.textContent === `${servicesArr[1].service}: $${servicesArr[1].cost}`) {
@@ -43,13 +43,22 @@ function updateTotalCost(event) {
     }
 }
 
+function substractingTotalCost(event) {
+    if (event.textContent === `${servicesArr[0].service}: $${servicesArr[0].cost}`) {
+        totalCost -= servicesArr[0].cost;
+    } else if (event.textContent === `${servicesArr[1].service}: $${servicesArr[1].cost}`) {
+        totalCost -= servicesArr[1].cost;
+    } else {
+        totalCost -= 30;
+    }
+}
+
 function checkDuplicate(event) {
     if (serviceItems.includes(`${event}`)) {
         alert('You have already added this service!')
         duplicateItems = true;
     }
 }
-
 
 //-----------------------------------------------------------
 const serviceBtns = document.querySelectorAll('.services')
@@ -66,7 +75,7 @@ function runApp() {
 
             serviceItems.push(serviceBtns[i].textContent)
             
-            updateTotalCost(serviceBtns[i])
+            addingTotalCost(serviceBtns[i])
     
             const node = document.createElement('p');
             node.classList.add('added-service');
@@ -91,6 +100,18 @@ function runApp() {
             let totalEl = document.querySelector('.total-cost')
             totalEl.textContent = ` $${totalCost}`;
 
+            if(serviceItems) {
+                const removeBtn = document.querySelectorAll('.remove')
+                for (let i = 0; i < removeBtn.length; i++) {
+                    removeBtn[i].addEventListener('click', function() {
+                        removeBtn[i].textContent = '';
+                        substractingTotalCost(removeBtn[i].parentElement)
+                        totalEl.textContent = ` $${totalCost}`
+                        removeBtn[i].parentElement.remove()
+                        // serviceItems.splice(removeBtn[i], 1)
+                    })
+                }
+            }
         })
     }
 }
