@@ -1,9 +1,11 @@
 // --------- CACHING THE DOM ----------------
 const midContainer = document.querySelector('.mid-container');
 const innerContainer = document.querySelector('.inner-container');
+const invoiceBtn = document.querySelector('.send-invoice');
 
 
 // --------------- GLOBAL VARIABLES --------------
+
 const servicesArr = [{
     service: 'Wash Car',
     cost: 10
@@ -48,6 +50,7 @@ function checkDuplicate(event) {
     }
 }
 
+
 //-----------------------------------------------------------
 const serviceBtns = document.querySelectorAll('.services')
 
@@ -55,12 +58,13 @@ function runApp() {
     for (let i = 0; i < serviceBtns.length; i++) {
         serviceBtns[i].addEventListener('click', function() {
             checkDuplicate(serviceBtns[i].textContent)
+
             if (duplicateItems) {
                 duplicateItems = false;
                 return;
             }
+
             serviceItems.push(serviceBtns[i].textContent)
-            console.log(serviceItems)
             
             updateTotalCost(serviceBtns[i])
     
@@ -86,9 +90,16 @@ function runApp() {
 
             let totalEl = document.querySelector('.total-cost')
             totalEl.textContent = ` $${totalCost}`;
+
         })
     }
 }
 
 runApp();
 
+invoiceBtn.addEventListener('click', function() {
+    if (servicesAdded) {
+        alert('Thank you for your invoice! We will be in contact with you soon!')
+        window.location.reload();
+    }
+})
